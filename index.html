@@ -69,7 +69,7 @@
         <tbody id="tableBody"></tbody>
       </table>
 
-      <!-- Modal -->
+      <!-- Modal xác nhận xoá -->
       <div class="modal fade" id="deleteConfirmationModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
@@ -86,6 +86,54 @@
 
             <!-- Modal footer -->
             <div class="modal-footer" id="deleteConfirmationModalFooter"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal sửa nhân viên -->
+      <div class="modal fade" id="editModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <!-- Modal header -->
+            <div class="modal-header">
+              <h5 class="modal-title">Chỉnh sửa thông tin nhân viên</h5>
+              <button type="button" class="close" data-dismiss="modal">
+                <span>&times;</span>
+              </button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="id_edit">Mã nhân viên</label>
+                  <input type="text" class="form-control" id="id_edit" disabled />
+                </div>
+                <div class="form-group">
+                  <label for="name_edit">Tên nhân viên</label>
+                  <input type="text" class="form-control" id="name_edit" />
+                </div>
+                <div class="form-group">
+                  <label for="position_edit">Chức vụ</label>
+                  <select class="form-control" id="position_edit">
+                    <option>Giám đốc</option>
+                    <option>Quản lý</option>
+                    <option>Nhân viên</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="baseSalary_edit">Lương cơ bản</label>
+                  <input type="text" class="form-control" id="baseSalary_edit" />
+                </div>
+                <div class="form-group">
+                  <label for="hoursOfWorking_edit">Số giờ làm trong tháng</label>
+                  <input type="text" class="form-control" id="hoursOfWorking_edit" />
+                </div>
+              </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer" id="editModalFooter"></div>
           </div>
         </div>
       </div>

@@ -20,6 +20,7 @@ function render(array) {
                   <td>${element.rank}</td>
                   <td>
                     <button class="btn btn-danger" onclick="showConfirmationToDelete('${element.id}','${element.name}')" data-toggle="modal" data-target="#deleteConfirmationModal">Xoá</button>
+                    <button class="btn btn-primary" onclick="showModalToEdit('${element.id}')" data-toggle="modal" data-target="#editModal">Chỉnh sửa</button>
                   </td>
               </tr>`;
     }
@@ -97,4 +98,42 @@ function deleteEmployee(employeeID) {
   saveToLocalStorage();
 
   $("#deleteConfirmationModal").modal("hide");
+}
+
+// Hàm hiển thị modal để nhập thông tin cần chỉnh sửa
+function showModalToEdit(employeeID) {
+  for (let i = 0; i < employeeArray.length; i++) {
+    const element = employeeArray[i];
+    if (element.id === employeeID) {
+      document.querySelector("#id_edit").value = element.id;
+      document.querySelector("#name_edit").value = element.name;
+      document.querySelector("#position_edit").value = element.position;
+      document.querySelector("#baseSalary_edit").value = element.baseSalary;
+      document.querySelector("#hoursOfWorking_edit").value = element.hoursOfWorking;
+
+      document.querySelector("#editModalFooter").innerHTML = `
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" onclick="editEmployee('${employeeID}')">Cập nhật</button>`;
+    }
+  }
+}
+
+// Hàm sửa nhân viên:
+function editEmployee(employeeID) {
+  for (let i = 0; i < employeeArray.length; i++) {
+    const element = employeeArray[i];
+    if (element.id === employeeID) {
+      element.name = document.querySelector("#name_edit").value;
+      element.position = document.querySelector("#position_edit").value;
+      element.baseSalary = document.querySelector("#baseSalary_edit").value;
+      element.hoursOfWorking = document.querySelector("#hoursOfWorking_edit").value;
+      element.totalSalary = element.calculatingTotalSalary();
+      element.rank = element.ranking();
+    }
+  }
+
+  render(employeeArray);
+  saveToLocalStorage();
+
+  $("#editModal").modal("hide");
 }

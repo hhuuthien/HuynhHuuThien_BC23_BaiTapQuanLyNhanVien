@@ -30,40 +30,6 @@ function render(array) {
   document.querySelector("#tableBody").innerHTML = stringHTML;
 }
 
-// Hàm tính tổng lương
-function calculatingTotalSalary(baseSalary, position) {
-  var totalSalary = 0;
-  switch (position) {
-    case "Giám đốc":
-      totalSalary = baseSalary * 3;
-      break;
-    case "Quản lý":
-      totalSalary = baseSalary * 2;
-      break;
-    case "Nhân viên":
-      totalSalary = baseSalary;
-      break;
-    default:
-      break;
-  }
-  return totalSalary;
-}
-
-// Hàm xếp loại nhân viên
-function ranking(hoursOfWorking) {
-  var rank = "";
-  if (hoursOfWorking > 120) {
-    rank = "Xuất sắc";
-  } else if (hoursOfWorking > 100) {
-    rank = "Giỏi";
-  } else if (hoursOfWorking > 80) {
-    rank = "Khá";
-  } else {
-    rank = "Trung bình";
-  }
-  return rank;
-}
-
 // Hàm lưu thông tin vào localStorage
 function saveToLocalStorage() {
   localStorage.setItem("ARRAY_EMPLOYEE", JSON.stringify(employeeArray));
@@ -84,13 +50,14 @@ function showToast(content) {
 
 document.querySelector("#addEmployeeButton").onclick = function () {
   var employee = new Employee();
+
   employee.id = document.querySelector("#id").value;
   employee.name = document.querySelector("#name").value;
   employee.position = document.querySelector("#position").value;
   employee.baseSalary = +document.querySelector("#baseSalary").value;
   employee.hoursOfWorking = +document.querySelector("#hoursOfWorking").value;
-  employee.totalSalary = calculatingTotalSalary(employee.baseSalary, employee.position);
-  employee.rank = ranking(employee.hoursOfWorking);
+  employee.totalSalary = employee.calculatingTotalSalary();
+  employee.rank = employee.ranking();
 
   employeeArray.push(employee);
   render(employeeArray);

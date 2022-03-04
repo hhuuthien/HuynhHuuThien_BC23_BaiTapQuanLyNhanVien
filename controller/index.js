@@ -38,7 +38,25 @@ function saveToLocalStorage() {
 // Hàm lấy thông tin từ localStorage
 function getFromLocalStorage() {
   if (localStorage.getItem("ARRAY_EMPLOYEE")) {
-    employeeArray = JSON.parse(localStorage.getItem("ARRAY_EMPLOYEE"));
+    // làm kiểu này thì các employee sẽ không có 2 hàm calculatingTotalSalary và ranking
+    // employeeArray = JSON.parse(localStorage.getItem("ARRAY_EMPLOYEE"));
+
+    var temp = JSON.parse(localStorage.getItem("ARRAY_EMPLOYEE"));
+    for (let i = 0; i < temp.length; i++) {
+      var element = temp[i];
+
+      //tạo employee mới có chứa 2 hàm -> gắn thông tin từ mảng tạm qua -> lưu vào mảng chính
+      var employee = new Employee();
+      employee.id = element.id;
+      employee.name = element.name;
+      employee.position = element.position;
+      employee.baseSalary = element.baseSalary;
+      employee.hoursOfWorking = element.hoursOfWorking;
+      employee.totalSalary = element.totalSalary;
+      employee.rank = element.rank;
+
+      employeeArray.push(employee);
+    }
   }
 }
 

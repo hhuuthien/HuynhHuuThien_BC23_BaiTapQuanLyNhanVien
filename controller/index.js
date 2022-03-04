@@ -60,12 +60,6 @@ function getFromLocalStorage() {
   }
 }
 
-// Hàm show toast thông báo
-function showToast(content) {
-  document.querySelector("#liveToast").innerHTML = content;
-  $("#liveToast").toast("show");
-}
-
 document.querySelector("#addEmployeeButton").onclick = function () {
   var employee = new Employee();
 
@@ -80,7 +74,6 @@ document.querySelector("#addEmployeeButton").onclick = function () {
   employeeArray.push(employee);
   render(employeeArray);
   saveToLocalStorage();
-  showToast("Thêm nhân viên thành công");
 };
 
 // Hàm show modal xác nhận xoá nhân viên và gắn thông tin lên modal
@@ -104,5 +97,4 @@ function deleteEmployee(employeeID) {
   saveToLocalStorage();
 
   $("#deleteConfirmationModal").modal("hide");
-  showToast("Đã xoá nhân viên");
 }

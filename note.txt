@@ -1,0 +1,7 @@
+[DONE] Dàn layout
+[DONE] Thêm
+[DONE] Xoá
+[DONE] Sửa
+Tìm kiếm
+Validate
+[DONE] Lưu local storage, làm đến đâu lưu đến đó

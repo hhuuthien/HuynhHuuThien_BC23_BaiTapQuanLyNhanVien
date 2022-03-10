@@ -2,8 +2,8 @@ function Employee() {
   this.id = "";
   this.name = "";
   this.position = "";
-  this.baseSalary = "";
-  this.hoursOfWorking = "";
+  this.baseSalary = 0;
+  this.hoursOfWorking = 0;
   this.totalSalary = "";
   this.rank = "";
   this.calculatingTotalSalary = function () {

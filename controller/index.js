@@ -64,13 +64,20 @@ function getFromLocalStorage() {
 document.querySelector("#addEmployeeButton").onclick = function () {
   var employee = new Employee();
 
-  employee.id = document.querySelector("#id").value;
-  employee.name = document.querySelector("#name").value;
+  employee.id = document.querySelector("#id").value.trim();
+  employee.name = document.querySelector("#name").value.trim();
   employee.position = document.querySelector("#position").value;
   employee.baseSalary = +document.querySelector("#baseSalary").value;
   employee.hoursOfWorking = +document.querySelector("#hoursOfWorking").value;
   employee.totalSalary = employee.calculatingTotalSalary();
   employee.rank = employee.ranking();
+
+  // validation
+  var validator = new Validation();
+  var valid = true;
+  valid &= validator.checkID(employee.id, "#idError");
+  valid &= validator.checkName(employee.name, "#nameError");
+  if (!valid) return;
 
   employeeArray.push(employee);
   render(employeeArray);

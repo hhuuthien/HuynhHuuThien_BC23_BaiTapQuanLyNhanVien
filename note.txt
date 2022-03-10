@@ -5,3 +5,4 @@
 Tìm kiếm
 Validate
 [DONE] Lưu local storage, làm đến đâu lưu đến đó
+Xoá ô input khi thêm nhân viên thành công

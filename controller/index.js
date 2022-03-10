@@ -67,8 +67,8 @@ document.querySelector("#addEmployeeButton").onclick = function () {
   employee.id = document.querySelector("#id").value.trim();
   employee.name = document.querySelector("#name").value.trim();
   employee.position = document.querySelector("#position").value;
-  employee.baseSalary = +document.querySelector("#baseSalary").value;
-  employee.hoursOfWorking = +document.querySelector("#hoursOfWorking").value;
+  employee.baseSalary = +document.querySelector("#baseSalary").value.trim();
+  employee.hoursOfWorking = +document.querySelector("#hoursOfWorking").value.trim();
   employee.totalSalary = employee.calculatingTotalSalary();
   employee.rank = employee.ranking();
 
@@ -77,6 +77,8 @@ document.querySelector("#addEmployeeButton").onclick = function () {
   var valid = true;
   valid &= validator.checkID(employee.id, "#idError");
   valid &= validator.checkName(employee.name, "#nameError");
+  valid &= validator.checkBaseSalary(employee.baseSalary, "#baseSalaryError");
+  valid &= validator.checkHoursOfWorking(employee.hoursOfWorking, "#hoursOfWorkingError");
   if (!valid) return;
 
   employeeArray.push(employee);

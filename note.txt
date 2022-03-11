@@ -2,10 +2,11 @@
 [DONE] Thêm
 [DONE] Xoá
 [DONE] Sửa
-Tìm kiếm
 [DONE] Validate
 [DONE] Validate trùng ID
 [DONE] Validate khi chỉnh sửa
 [DONE] Lưu local storage, làm đến đâu lưu đến đó
 [DONE] Xoá ô input khi thêm nhân viên thành công
+Tìm kiếm
 Xác nhận đã thêm đã xoá đã sửa
+Responsive giao diện cho đẹp

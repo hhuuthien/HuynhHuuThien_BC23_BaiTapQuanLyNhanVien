@@ -170,3 +170,8 @@ function clearInput() {
   document.querySelector("#baseSalary").value = "";
   document.querySelector("#hoursOfWorking").value = "";
 }
+
+// Tìm kiếm nhân viên
+document.querySelector("#searchButton").onclick = function () {
+  var keyword = document.querySelector("#keyword").value.trim();
+};

@@ -10,4 +10,4 @@
 [DONE] Tìm kiếm
 [DONE] Nút hiển thị tất cả
 [DONE] Xác nhận đã thêm đã xoá đã sửa
-Responsive giao diện cho đẹp
+[DONE] Responsive giao diện

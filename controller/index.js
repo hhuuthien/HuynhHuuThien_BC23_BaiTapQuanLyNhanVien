@@ -195,7 +195,6 @@ document.querySelector("#showAllButton").onclick = function () {
   document.querySelector("#keyword").value = "";
 };
 
-// Show toast
 function showToast(content) {
   document.querySelector("#liveToastBody").innerHTML = content;
   $("#liveToast").toast("show");

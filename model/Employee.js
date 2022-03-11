@@ -32,7 +32,7 @@ function Employee() {
     } else if (this.hoursOfWorking > 80) {
       rank = "Khá";
     } else {
-      rank = "Trung bình";
+      rank = "Không xếp loại";
     }
     return rank;
   };

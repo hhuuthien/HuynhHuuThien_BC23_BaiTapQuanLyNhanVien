@@ -128,15 +128,28 @@ function showModalToEdit(employeeID) {
   }
 }
 
-// Hàm sửa nhân viên:
+// Hàm sửa nhân viên
 function editEmployee(employeeID) {
+  var employeeName = document.querySelector("#name_edit").value.trim();
+  var employeePosition = document.querySelector("#position_edit").value;
+  var employeeBaseSalary = +document.querySelector("#baseSalary_edit").value.trim();
+  var employeeHoursOfWorking = +document.querySelector("#hoursOfWorking_edit").value.trim();
+
+  // validation
+  var validator = new Validation();
+  var valid = true;
+  valid &= validator.checkName(employeeName, "#nameEditError");
+  valid &= validator.checkBaseSalary(employeeBaseSalary, "#baseSalaryEditError", 1000000, 20000000);
+  valid &= validator.checkHoursOfWorking(employeeHoursOfWorking, "#hoursOfWorkingEditError", 50, 150);
+  if (!valid) return;
+
   for (let i = 0; i < employeeArray.length; i++) {
     const element = employeeArray[i];
     if (element.id === employeeID) {
-      element.name = document.querySelector("#name_edit").value;
-      element.position = document.querySelector("#position_edit").value;
-      element.baseSalary = document.querySelector("#baseSalary_edit").value;
-      element.hoursOfWorking = document.querySelector("#hoursOfWorking_edit").value;
+      element.name = employeeName;
+      element.position = employeePosition;
+      element.baseSalary = employeeBaseSalary;
+      element.hoursOfWorking = employeeHoursOfWorking;
       element.totalSalary = element.calculatingTotalSalary();
       element.rank = element.ranking();
     }

@@ -9,5 +9,5 @@
 [DONE] Xoá ô input khi thêm nhân viên thành công
 [DONE] Tìm kiếm
 [DONE] Nút hiển thị tất cả
-Xác nhận đã thêm đã xoá đã sửa
+[DONE] Xác nhận đã thêm đã xoá đã sửa
 Responsive giao diện cho đẹp

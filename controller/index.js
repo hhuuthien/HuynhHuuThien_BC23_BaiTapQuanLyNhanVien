@@ -86,6 +86,7 @@ document.querySelector("#addEmployeeButton").onclick = function () {
   render(employeeArray);
   saveToLocalStorage();
   clearInput();
+  showToast("Đã thêm nhân viên thành công");
 };
 
 // Hàm show modal xác nhận xoá nhân viên và gắn thông tin lên modal
@@ -109,6 +110,7 @@ function deleteEmployee(employeeID) {
   saveToLocalStorage();
 
   $("#deleteConfirmationModal").modal("hide");
+  showToast("Đã xoá nhân viên thành công");
 }
 
 // Hàm hiển thị modal để nhập thông tin cần chỉnh sửa
@@ -160,6 +162,7 @@ function editEmployee(employeeID) {
   saveToLocalStorage();
 
   $("#editModal").modal("hide");
+  showToast("Đã cập nhật thông tin nhân viên thành công");
 }
 
 // Hàm clear input
@@ -191,3 +194,9 @@ document.querySelector("#showAllButton").onclick = function () {
   render(employeeArray);
   document.querySelector("#keyword").value = "";
 };
+
+// Show toast
+function showToast(content) {
+  document.querySelector("#liveToastBody").innerHTML = content;
+  $("#liveToast").toast("show");
+}

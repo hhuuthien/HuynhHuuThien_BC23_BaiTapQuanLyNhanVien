@@ -75,10 +75,11 @@ document.querySelector("#addEmployeeButton").onclick = function () {
   // validation
   var validator = new Validation();
   var valid = true;
-  valid &= validator.checkID(employee.id, "#idError");
+  valid &= validator.checkID(employee.id, "#idError", 4, 6);
+  valid &= validator.checkDuplicatedID(employee.id, employeeArray, "#idError2");
   valid &= validator.checkName(employee.name, "#nameError");
-  valid &= validator.checkBaseSalary(employee.baseSalary, "#baseSalaryError");
-  valid &= validator.checkHoursOfWorking(employee.hoursOfWorking, "#hoursOfWorkingError");
+  valid &= validator.checkBaseSalary(employee.baseSalary, "#baseSalaryError", 1000000, 20000000);
+  valid &= validator.checkHoursOfWorking(employee.hoursOfWorking, "#hoursOfWorkingError", 50, 150);
   if (!valid) return;
 
   employeeArray.push(employee);

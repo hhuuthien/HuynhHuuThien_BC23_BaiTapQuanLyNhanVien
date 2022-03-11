@@ -173,5 +173,21 @@ function clearInput() {
 
 // Tìm kiếm nhân viên
 document.querySelector("#searchButton").onclick = function () {
-  var keyword = document.querySelector("#keyword").value.trim();
+  var keyword = document.querySelector("#keyword").value.trim().toLowerCase();
+
+  var resultArray = [];
+  for (let i = 0; i < employeeArray.length; i++) {
+    const e = employeeArray[i];
+    if (e.name.trim().toLowerCase().search(keyword) !== -1) {
+      resultArray.push(e);
+    }
+  }
+
+  render(resultArray);
+};
+
+// Hiển thị tất cả
+document.querySelector("#showAllButton").onclick = function () {
+  render(employeeArray);
+  document.querySelector("#keyword").value = "";
 };

@@ -7,6 +7,7 @@
 [DONE] Validate khi chỉnh sửa
 [DONE] Lưu local storage, làm đến đâu lưu đến đó
 [DONE] Xoá ô input khi thêm nhân viên thành công
-Tìm kiếm
+[DONE] Tìm kiếm
+[DONE] Nút hiển thị tất cả
 Xác nhận đã thêm đã xoá đã sửa
 Responsive giao diện cho đẹp

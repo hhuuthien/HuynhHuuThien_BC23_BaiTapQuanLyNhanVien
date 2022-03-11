@@ -85,6 +85,7 @@ document.querySelector("#addEmployeeButton").onclick = function () {
   employeeArray.push(employee);
   render(employeeArray);
   saveToLocalStorage();
+  clearInput();
 };
 
 // Hàm show modal xác nhận xoá nhân viên và gắn thông tin lên modal
@@ -159,4 +160,13 @@ function editEmployee(employeeID) {
   saveToLocalStorage();
 
   $("#editModal").modal("hide");
+}
+
+// Hàm clear input
+function clearInput() {
+  document.querySelector("#id").value = "";
+  document.querySelector("#name").value = "";
+  document.querySelector("#position").value = "Giám đốc";
+  document.querySelector("#baseSalary").value = "";
+  document.querySelector("#hoursOfWorking").value = "";
 }

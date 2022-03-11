@@ -3,8 +3,9 @@
 [DONE] Xoá
 [DONE] Sửa
 Tìm kiếm
-Validate
-[XONG] Validate trùng ID
-Validate khi chỉnh sửa
+[DONE] Validate
+[DONE] Validate trùng ID
+[DONE] Validate khi chỉnh sửa
 [DONE] Lưu local storage, làm đến đâu lưu đến đó
-Xoá ô input khi thêm nhân viên thành công
+[DONE] Xoá ô input khi thêm nhân viên thành công
+Xác nhận đã thêm đã xoá đã sửa
